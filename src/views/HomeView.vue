@@ -191,9 +191,11 @@ function showError(message: string): void {
           </div>
           <div class="column is-flex is-justify-content-center">
             <div class="is-relative">
-              <figure>
-                <img src="../assets/images/home/register.png" alt="Register image" />
-              </figure>
+              <RouterLink to="/register">
+                <figure>
+                  <img src="../assets/images/home/register.png" alt="Register image" />
+                </figure>
+              </RouterLink>
               <figure>
                 <img src="../assets/images/home/logo.png" alt="Logo image" />
               </figure>
