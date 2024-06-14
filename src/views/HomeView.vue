@@ -196,9 +196,6 @@ function showError(message: string): void {
                   <img src="../assets/images/home/register.png" alt="Register image" />
                 </figure>
               </RouterLink>
-              <figure>
-                <img src="../assets/images/home/logo.png" alt="Logo image" />
-              </figure>
               <div class="notification is-danger is-light" v-if="errorMessage !== ''">
                 {{ errorMessage }}
               </div>
@@ -255,7 +252,6 @@ function showError(message: string): void {
   background: url(../assets/images/home/pirate-bg-ranking.png) no-repeat;
   width: 313px;
   height: 44px;
-  font-family: 'yanone_kaffeesatzregular';
   margin-bottom: 5px;
 }
 
@@ -279,6 +275,7 @@ function showError(message: string): void {
   color: white;
   font-size: 34px;
   text-shadow: 0px 1px 1px #000;
+  font-family: 'yanone_kaffeesatzregular';
 }
 
 .name {
@@ -293,6 +290,7 @@ function showError(message: string): void {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: 'yanone_kaffeesatzregular';
 }
 
 .leader-name {
@@ -307,6 +305,7 @@ function showError(message: string): void {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: 'yanone_kaffeesatzregular';
 }
 
 .crew-level {
@@ -318,6 +317,7 @@ function showError(message: string): void {
   color: #988f43;
   font-size: 15px;
   line-height: 1;
+  font-family: 'yanone_kaffeesatzregular';
 }
 
 .crew-members {
@@ -329,6 +329,7 @@ function showError(message: string): void {
   color: #988f43;
   font-size: 15px;
   line-height: 1;
+  font-family: 'yanone_kaffeesatzregular';
 }
 
 .user-reputation {
@@ -343,6 +344,7 @@ function showError(message: string): void {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: 'yanone_kaffeesatzregular';
 }
 
 .toggle-button {
@@ -356,6 +358,7 @@ function showError(message: string): void {
   text-align: center;
   text-transform: uppercase;
   padding: 4px 9px 1px;
+  font-family: 'yanone_kaffeesatzregular';
 }
 
 .toggle-button:hover {

@@ -2,3 +2,51 @@
   font-family: 'yanone_kaffeesatzregular';
   src: url('../assets/fonts/yanonekaffeesatz-regular-webfont.woff') format('woff');
 }
+
+@font-face {
+  font-family: 'lithos_pro_regularregular';
+  src: url('../assets/fonts/lithospro-regular_0-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MyriadProRegular';
+  src: url('../assets/fonts/myriadpro-regular_0-webfont.woff') format('woff');
+}
+
+* {
+  font-family: 'MyriadProRegular', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.fl {
+  font-family: 'lithos_pro_regularregular';
+}
+
+.fy {
+  font-family: 'yanone_kaffeesatzregular';
+}
+
+.fm {
+  font-family: 'MyriadProRegular';
+}
+
+.co {
+  color: #ff8000;
+}
+
+.cb {
+  color: #3a75b9;
+}
+
+.is-borderless:focus {
+  border-color: hsl(221, 14%, calc(86% + 0%)) !important;
+}
