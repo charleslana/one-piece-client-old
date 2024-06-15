@@ -1,5 +1,6 @@
 import HomeView from '@/views/HomeView.vue';
 import RegisterView from '@/views/RegisterView.vue';
+import SelectCharacterView from '@/views/SelectCharacterView.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/register',
       name: 'register',
       component: RegisterView
+    },
+    {
+      path: '/select-character',
+      name: 'select-character',
+      component: SelectCharacterView
     },
     {
       path: '/:catchAll(.*)',

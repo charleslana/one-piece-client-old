@@ -4,6 +4,9 @@ import homeLuffy2Image from '@/assets/images/home/characters/luffy-2.png';
 import homeLuffyImage from '@/assets/images/home/characters/luffy.png';
 import homeNeptuneImage from '@/assets/images/home/characters/netuno.png';
 import homeSmokerImage from '@/assets/images/home/characters/smoker.png';
+import luffy1MiniImage from '@/assets/images/characters/monkey-d-luffy/1-mini.png';
+import zoro1MiniImage from '@/assets/images/characters/roronoa-zoro/1-mini.png';
+import usopp1MiniImage from '@/assets/images/characters/usopp/1-mini.png';
 
 const images = {
   homeCaesarClownImage,
@@ -11,7 +14,10 @@ const images = {
   homeLuffyImage,
   homeLuffy2Image,
   homeNeptuneImage,
-  homeSmokerImage
+  homeSmokerImage,
+  luffy1MiniImage,
+  zoro1MiniImage,
+  usopp1MiniImage
 };
 
 export default images;

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import images from '@/data/image';
 import type { CrewRanking, UserRanking } from '@/interfaces/home-ranking';
+import router from '@/router';
 import type { OrganizationType } from '@/types/organization-type';
 import { computed, onMounted, ref } from 'vue';
 
@@ -125,8 +126,13 @@ function login(): void {
   errorMessage.value = '';
   clearTimeout(notificationTimeout);
   setTimeout(() => {
-    isLoading.value = false;
-    showError('Usuário ou senha inválida, tente novamente.');
+    const error = false;
+    if (error) {
+      isLoading.value = false;
+      showError('Usuário ou senha inválida, tente novamente.');
+      return;
+    }
+    router.push({ name: 'select-character' });
   }, 2000);
 }
 
@@ -440,7 +446,7 @@ function showError(message: string): void {
 .notification {
   position: absolute;
   z-index: 2;
-  top: 116px;
+  top: 0px;
   left: 13px;
   width: 264px;
 }

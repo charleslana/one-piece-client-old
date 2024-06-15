@@ -4,6 +4,7 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import './assets/main.css';
 import 'bulma/css/bulma.css';
+import 'animate.css';
 
 const app = createApp(App);
 

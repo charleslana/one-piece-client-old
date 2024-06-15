@@ -142,7 +142,7 @@ console.log('%c All good!', 'font-size: 2em; color: green;');
                     </div>
                     <button
                       class="button is-primary"
-                      :class="{ 'is-loading': isRegisterDisabled }"
+                      :class="{ 'is-loading': isDisabled }"
                       :disabled="isRegisterDisabled"
                     >
                       Continuar registro
