@@ -20,6 +20,8 @@ const randomCharacter = ref('');
 const totalAvailable = ref(12);
 const step = ref(1);
 const totalCharacters = 50;
+const selectedFaction = ref<OrganizationType>();
+const selectedCharacter = ref<number>();
 const name = ref('');
 const selectedSea = ref<SeaType>('north-blue');
 const selectedBreed = ref<BreedType>('human');
@@ -79,12 +81,12 @@ function getRandomCharacter(): string {
 }
 
 function selectFaction(faction: OrganizationType): void {
-  console.log(faction);
+  selectedFaction.value = faction;
   step.value = 3;
 }
 
 function selectCharacter(characterId: number): void {
-  console.log(characterId);
+  selectedCharacter.value = characterId;
   step.value = 4;
 }
 
