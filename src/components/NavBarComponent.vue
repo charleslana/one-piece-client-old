@@ -79,12 +79,12 @@ function logout(): void {
       <div class="column is-3">
         <div class="nav-bar-menu-end">
           <div class="is-flex is-justify-content-center mt-3">
-            <div class="mr-2">
+            <div class="mr-2" v-tooltip="'Trocar de personagem'">
               <RouterLink to="/select-character">
                 <img src="../assets/images/icons/nav-bar/change-character.png" alt="Menu icon" />
               </RouterLink>
             </div>
-            <div>
+            <div v-tooltip="'Vip permanentemente'">
               <img src="../assets/images/icons/nav-bar/vip.png" alt="Menu icon" />
             </div>
           </div>

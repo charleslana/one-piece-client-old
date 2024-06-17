@@ -6,7 +6,12 @@ import { calculateProgressBarWidth, getCharacterMini } from '@/utils/utils';
   <div class="header-bg is-flex is-justify-content-flex-end is-align-items-center">
     <div class="user-info-bg">
       <div class="user-coin">500.000</div>
-      <img :src="getCharacterMini(1)" alt="Character mini" class="user-avatar" />
+      <img
+        :src="getCharacterMini(1)"
+        alt="Character mini"
+        class="user-avatar"
+        v-tooltip="'Clique aqui pra trocar de avatar'"
+      />
       <div class="user-name">Test</div>
       <div class="user-level">
         <p>Nível</p>
@@ -77,6 +82,7 @@ import { calculateProgressBarWidth, getCharacterMini } from '@/utils/utils';
   object-fit: cover;
   box-shadow: 0 0 2px 0 rgb(11, 71, 105);
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .user-name {
