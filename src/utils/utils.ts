@@ -12,3 +12,12 @@ export function getCharacterMini(id: number): string {
       return '';
   }
 }
+
+export function calculateProgressBarWidth(
+  currentValue: number,
+  maxValue: number,
+  maxBarWidth: number
+): number {
+  const percentage = (currentValue / maxValue) * 100;
+  return Math.round((percentage / 100) * maxBarWidth);
+}

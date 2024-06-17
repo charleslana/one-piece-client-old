@@ -1,4 +1,5 @@
 import HomeView from '@/views/HomeView.vue';
+import NewspaperView from '@/views/NewspaperView.vue';
 import RegisterView from '@/views/RegisterView.vue';
 import SelectCharacterView from '@/views/SelectCharacterView.vue';
 import { createRouter, createWebHistory } from 'vue-router';
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/select-character',
       name: 'select-character',
       component: SelectCharacterView
+    },
+    {
+      path: '/newspaper',
+      name: 'newspaper',
+      component: NewspaperView
     },
     {
       path: '/:catchAll(.*)',

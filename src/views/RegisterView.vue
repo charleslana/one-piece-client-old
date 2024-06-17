@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import router from '@/router';
 import { computed, ref } from 'vue';
 import AlertComponent from '@/components/AlertComponent.vue';
 
@@ -38,7 +37,6 @@ function register(): void {
       return;
     }
     isSuccess.value = true;
-    // router.push({ name: 'register-success' });
   }, 1000);
 }
 

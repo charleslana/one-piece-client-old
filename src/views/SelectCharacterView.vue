@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import images from '@/data/image';
 import type { User } from '@/interfaces/user';
+import router from '@/router';
 import type { BreedType } from '@/types/breed-type';
 import type { ClassType } from '@/types/class-type';
 import type { OrganizationType } from '@/types/organization-type';
@@ -121,7 +122,16 @@ async function getCharacters(): Promise<void> {
 }
 
 function loginCharacter(id: number): void {
-  alert(id);
+  console.log(id);
+  isLoading.value = true;
+  setTimeout(() => {
+    const error = false;
+    if (error) {
+      isLoading.value = false;
+      return;
+    }
+    router.push({ name: 'newspaper' });
+  }, 1000);
 }
 
 function deleteCharacter(id: number): void {
@@ -187,7 +197,7 @@ function getCharacterButton(faction: OrganizationType): string {
             class="column is-flex is-justify-content-center animate__animated animate__slideInDown"
             v-if="step === 1"
           >
-            <div class="character-box p-4 pb-5">
+            <div class="character-box p-4 pb-5" v-if="!isLoading">
               <div class="columns is-multiline is-mobile is-pulled-left">
                 <div
                   class="column is-4"
@@ -226,6 +236,9 @@ function getCharacterButton(faction: OrganizationType): string {
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="home-box is-flex is-justify-content-center" v-else>
+              <img src="../assets/images/home/loading.gif" alt="Loading image" />
             </div>
           </div>
           <div class="column is-flex is-justify-content-center" v-if="step === 2">
