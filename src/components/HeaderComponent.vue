@@ -19,12 +19,15 @@ import { calculateProgressBarWidth, getCharacterMini } from '@/utils/utils';
       </div>
       <div class="user-class">Espadachim</div>
       <div class="user-progress">
-        <div
-          class="user-progress-bar-fill"
-          :style="{ width: `${calculateProgressBarWidth(50, 100, 127)}px` }"
-        >
-          <div class="user-progress-bar">50%</div>
-        </div>
+        <VTooltip>
+          <div
+            class="user-progress-bar-fill"
+            :style="{ width: `${calculateProgressBarWidth(50, 100, 127)}px` }"
+          >
+            <div class="user-progress-bar">50%</div>
+          </div>
+          <template #popper> <b>EXPERIÊNCIA:</b> 0 de 5</template>
+        </VTooltip>
       </div>
       <div class="user-credit">Créditos: <span>999.999</span></div>
     </div>
