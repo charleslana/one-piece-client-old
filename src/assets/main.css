@@ -18,6 +18,11 @@
   src: url('../assets/fonts/Mouse-Memoirs.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Jolly Lodger';
+  src: url('../assets/fonts/Jolly-Lodger.woff2') format('woff2');
+}
+
 * {
   font-family: 'MyriadProRegular', sans-serif;
 }
@@ -30,6 +35,14 @@
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
+}
+
+a:hover,
+a:active,
+a:focus,
+a:focus-visible {
+  outline: none !important;
+  border: 0;
 }
 
 .fl {
@@ -54,4 +67,9 @@
 
 .is-borderless:focus {
   border-color: hsl(221, 14%, calc(86% + 0%)) !important;
+}
+
+.menu-columns {
+  margin-top: -22px !important;
+  margin-left: -4px !important;
 }

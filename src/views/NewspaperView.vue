@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import NavBarComponent from '@/components/NavBarComponent.vue';
+import MenuComponent from '@/components/MenuComponent.vue';
 </script>
 
 <template>
@@ -9,6 +10,12 @@ import NavBarComponent from '@/components/NavBarComponent.vue';
       <div class="container">
         <HeaderComponent />
         <NavBarComponent />
+        <div class="columns menu-columns">
+          <div class="column is-3 mb-2">
+            <MenuComponent />
+          </div>
+          <div class="column">2</div>
+        </div>
       </div>
     </div>
   </div>

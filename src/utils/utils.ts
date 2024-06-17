@@ -21,3 +21,8 @@ export function calculateProgressBarWidth(
   const percentage = (currentValue / maxValue) * 100;
   return Math.round((percentage / 100) * maxBarWidth);
 }
+
+export function calculateProgressBar(currentValue: number, maxValue: number): number {
+  const percentage = (currentValue / maxValue) * 100;
+  return Math.min(Math.round(percentage), 100);
+}

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { calculateProgressBarWidth, getCharacterMini } from '@/utils/utils';
+import { calculateProgressBar, calculateProgressBarWidth, getCharacterMini } from '@/utils/utils';
 </script>
 
 <template>
@@ -22,9 +22,9 @@ import { calculateProgressBarWidth, getCharacterMini } from '@/utils/utils';
         <VTooltip>
           <div
             class="user-progress-bar-fill"
-            :style="{ width: `${calculateProgressBarWidth(50, 100, 127)}px` }"
+            :style="{ width: `${calculateProgressBarWidth(50, 100, 123)}px` }"
           >
-            <div class="user-progress-bar">50%</div>
+            <div class="user-progress-bar">{{ calculateProgressBar(50, 100) }}%</div>
           </div>
           <template #popper> <b>EXPERIÊNCIA:</b> 0 de 5</template>
         </VTooltip>

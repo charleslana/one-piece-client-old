@@ -119,7 +119,7 @@ function logout(): void {
   height: 150px;
   position: absolute;
   bottom: 5px;
-  left: 15px;
+  left: 53px;
 }
 
 .nav-bar-menu {
