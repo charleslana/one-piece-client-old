@@ -7,6 +7,7 @@ import homeSmokerImage from '@/assets/images/home/characters/smoker.png';
 import luffy1MiniImage from '@/assets/images/characters/monkey-d-luffy/1-mini.png';
 import zoro1MiniImage from '@/assets/images/characters/roronoa-zoro/1-mini.png';
 import usopp1MiniImage from '@/assets/images/characters/usopp/1-mini.png';
+import shanks2BattleImage from '@/assets/images/characters/shanks/2-battle.png';
 
 const images = {
   homeCaesarClownImage,
@@ -17,7 +18,8 @@ const images = {
   homeSmokerImage,
   luffy1MiniImage,
   zoro1MiniImage,
-  usopp1MiniImage
+  usopp1MiniImage,
+  shanks2BattleImage
 };
 
 export default images;

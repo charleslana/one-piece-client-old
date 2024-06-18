@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import AlertComponent from '@/components/AlertComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 
 const username = ref('');
 const password = ref('');
@@ -176,12 +177,7 @@ console.log('%c All good!', 'font-size: 2em; color: green;');
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="container is-flex is-flex-direction-column is-align-items-flex-end">
-        <a href="#" target="_blank" class="has-text-white">Politica de Privacidade</a>
-        <a href="#" target="_blank" class="has-text-white">Termos de uso</a>
-      </div>
-    </footer>
+    <FooterComponent />
   </div>
   <AlertComponent :message="alertMessage" @close="alertMessage = ''" />
 </template>
@@ -224,13 +220,6 @@ console.log('%c All good!', 'font-size: 2em; color: green;');
 
 .button {
   font-family: 'yanone_kaffeesatzregular';
-}
-
-.footer {
-  background: url(../assets/images/layout/footer.png) no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 175px;
 }
 
 .register-box-success {

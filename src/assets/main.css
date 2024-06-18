@@ -23,6 +23,11 @@
   src: url('../assets/fonts/Jolly-Lodger.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Trade Winds';
+  src: url('../assets/fonts/Trade-Winds.woff2') format('woff2');
+}
+
 * {
   font-family: 'MyriadProRegular', sans-serif;
 }
