@@ -5,7 +5,7 @@ import MenuComponent from '@/components/MenuComponent.vue';
 import ContextComponent from '@/components/ContextComponent.vue';
 import { onMounted, ref } from 'vue';
 import type { Newspaper } from '@/interfaces/newspaper';
-import { formatDateToNewspaper, getCharacterBattle } from '@/utils/utils';
+import { formatDateToNewspaper, getCharacterBattle, getCharacterMini } from '@/utils/utils';
 import HeaderTitleComponent from '@/components/HeaderTitleComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 
@@ -97,11 +97,11 @@ const newspapers = ref<Newspaper[]>([
                 </div>
                 <HeaderTitleComponent title="Ranking" />
                 <div class="box">
-                  <div class="top-organization">
+                  <div class="top-organization mb-5">
                     <div class="columns is-multiline">
                       <div class="column is-4">
                         <div class="top-box" v-for="index in 3" :key="index">
-                          <img :src="getCharacterBattle(4)" alt="Character image" />
+                          <img :src="getCharacterMini(5)" alt="Character mini" />
                           <div class="top-position-1">1</div>
                           <div class="name">Test</div>
                           <div class="level">Nível: 999</div>
@@ -109,7 +109,7 @@ const newspapers = ref<Newspaper[]>([
                       </div>
                       <div class="column is-4">
                         <div class="top-box" v-for="index in 3" :key="index">
-                          <img :src="getCharacterBattle(4)" alt="Character image" />
+                          <img :src="getCharacterMini(5)" alt="Character mini" />
                           <div class="top-position-1">1</div>
                           <div class="name">Test</div>
                           <div class="level">Nível: 999</div>
@@ -117,7 +117,35 @@ const newspapers = ref<Newspaper[]>([
                       </div>
                       <div class="column is-4">
                         <div class="top-box" v-for="index in 3" :key="index">
-                          <img :src="getCharacterBattle(4)" alt="Character image" />
+                          <img :src="getCharacterMini(5)" alt="Character mini" />
+                          <div class="top-position-1">1</div>
+                          <div class="name">Test</div>
+                          <div class="level">Nível: 999</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="top-organization top-player">
+                    <div class="columns is-multiline">
+                      <div class="column is-4">
+                        <div class="top-box" v-for="index in 3" :key="index">
+                          <img :src="getCharacterMini(5)" alt="Character mini" />
+                          <div class="top-position-1">1</div>
+                          <div class="name">Test</div>
+                          <div class="level">Nível: 999</div>
+                        </div>
+                      </div>
+                      <div class="column is-4">
+                        <div class="top-box" v-for="index in 3" :key="index">
+                          <img :src="getCharacterMini(5)" alt="Character mini" />
+                          <div class="top-position-1">1</div>
+                          <div class="name">Test</div>
+                          <div class="level">Nível: 999</div>
+                        </div>
+                      </div>
+                      <div class="column is-4">
+                        <div class="top-box" v-for="index in 3" :key="index">
+                          <img :src="getCharacterMini(5)" alt="Character mini" />
                           <div class="top-position-1">1</div>
                           <div class="name">Test</div>
                           <div class="level">Nível: 999</div>
@@ -252,6 +280,12 @@ const newspapers = ref<Newspaper[]>([
   width: 100%;
   height: auto;
   padding: 65px 0 0 6px;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.top-player {
+  background: url(../assets/images/newspaper/top-player.png) no-repeat;
   background-size: cover;
 }
 

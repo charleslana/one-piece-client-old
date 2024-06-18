@@ -8,6 +8,8 @@ export function getCharacterMini(id: number): string {
       return images.zoro1MiniImage;
     case 3:
       return images.usopp1MiniImage;
+    case 5:
+      return images.teach3MiniImage;
     default:
       return '';
   }
