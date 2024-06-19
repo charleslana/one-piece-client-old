@@ -6,12 +6,14 @@ import { calculateProgressBar, calculateProgressBarWidth, getCharacterMini } fro
   <div class="header-bg is-flex is-justify-content-flex-end is-align-items-center">
     <div class="user-info-bg">
       <div class="user-coin">500.000</div>
-      <img
-        :src="getCharacterMini(1)"
-        alt="Character mini"
-        class="user-avatar"
-        v-tooltip="'Clique aqui pra trocar de avatar'"
-      />
+      <RouterLink to="/avatar">
+        <img
+          :src="getCharacterMini(1)"
+          alt="Character mini"
+          class="user-avatar"
+          v-tooltip="'Clique aqui pra trocar de avatar'"
+        />
+      </RouterLink>
       <div class="user-name">Test</div>
       <div class="user-level">
         <p>Nível</p>

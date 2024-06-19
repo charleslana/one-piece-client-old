@@ -22,7 +22,7 @@ function logout(): void {
           </RouterLink>
           <RouterLink to="/newspaper">
             <div class="nab-bar-top">
-              <div><img src="../assets/images/icons/nav-bar/sea.png" alt="Menu icon" /></div>
+              <div><img src="../assets/images/icons/nav-bar/island.png" alt="Menu icon" /></div>
               <div class="nav-bar-menu">Ilha</div>
             </div>
           </RouterLink>
