@@ -44,3 +44,13 @@ export function formatDateToNewspaper(data: Date): string {
   const ano = data.getFullYear().toString().slice(-2);
   return `${dia}/${mes}/${ano}`;
 }
+
+export function formatDate(data: Date): string {
+  const day = data.getDate().toString().padStart(2, '0');
+  const month = (data.getMonth() + 1).toString().padStart(2, '0');
+  const year = data.getFullYear().toString();
+  const hours = data.getHours().toString().padStart(2, '0');
+  const minutes = data.getMinutes().toString().padStart(2, '0');
+  const seconds = data.getSeconds().toString().padStart(2, '0');
+  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+}

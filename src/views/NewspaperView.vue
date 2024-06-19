@@ -66,7 +66,7 @@ const newspapers = ref<Newspaper[]>([
                     v-for="(newspaper, index) in newspapers"
                     :key="index"
                   >
-                    <RouterLink to="/newspaper">
+                    <RouterLink :to="`/newspaper/${index}`">
                       <div class="newspaper-title-date">
                         {{ formatDateToNewspaper(new Date(newspaper.date)) }}
                       </div>
@@ -74,7 +74,7 @@ const newspapers = ref<Newspaper[]>([
                     </RouterLink>
                   </div>
                   <div class="newspaper-title">
-                    <RouterLink to="/newspaper">
+                    <RouterLink to="/newspaper-all">
                       <div class="newspaper-title-date">[+]</div>
                       <div class="newspaper-title-title">Ver todas notícias</div>
                     </RouterLink>
@@ -165,71 +165,6 @@ const newspapers = ref<Newspaper[]>([
 </template>
 
 <style scoped>
-.bg {
-  background-image: url(../assets/images/layout/grain.png),
-    url(../assets/images/layout/background.png),
-    linear-gradient(
-      180deg,
-      rgba(15, 23, 42, 1) 0%,
-      rgba(30, 41, 59, 1) 35%,
-      rgba(51, 65, 85, 1) 100%
-    );
-  background-repeat: repeat, no-repeat;
-  background-position: top center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.content {
-  flex: 1;
-}
-
-.newspaper-box {
-  background: url(../assets/images/layout/newspaper-box.png) no-repeat;
-  width: 100%;
-  height: 323px;
-  padding: 75px 0 0 16px;
-}
-
-.newspaper-title {
-  width: 328px;
-  height: 38px;
-  background: url(../assets/images/layout/newspaper-title.png) left top no-repeat;
-  line-height: 34px;
-  overflow: hidden;
-  position: relative;
-}
-
-.newspaper-title:hover {
-  background-position: 0 -38px;
-}
-
-.newspaper-title-date {
-  position: absolute;
-  top: 2px;
-  left: 1px;
-  text-align: center;
-  text-shadow: 1px 1px 0 #761f0b;
-  width: 66px;
-  height: 35px;
-  font-size: 14px;
-  font-family: 'yanone_kaffeesatzregular';
-  color: #ece8e1;
-}
-
-.newspaper-title-title {
-  position: absolute;
-  top: 2px;
-  left: 71px;
-  text-shadow: 1px 1px 0 #895e13;
-  width: 253px;
-  height: 35px;
-  font-size: 17px;
-  font-family: 'yanone_kaffeesatzregular';
-  color: #ece8e1;
-}
-
 .top-wanted {
   background: url(../assets/images/layout/top-wanted.png) no-repeat;
   width: 114px;

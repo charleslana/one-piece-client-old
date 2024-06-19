@@ -78,3 +78,68 @@ a:focus-visible {
   margin-top: -22px !important;
   margin-left: -4px !important;
 }
+
+.bg {
+  background-image: url(../assets/images/layout/grain.png),
+    url(../assets/images/layout/background.png),
+    linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 1) 0%,
+      rgba(30, 41, 59, 1) 35%,
+      rgba(51, 65, 85, 1) 100%
+    );
+  background-repeat: repeat, no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.newspaper-box {
+  background: url(../assets/images/layout/newspaper-box.png) no-repeat;
+  width: 100%;
+  min-height: 323px;
+  padding: 75px 0 0 16px;
+}
+
+.newspaper-title {
+  width: 328px;
+  height: 38px;
+  background: url(../assets/images/layout/newspaper-title.png) left top no-repeat;
+  line-height: 34px;
+  overflow: hidden;
+  position: relative;
+}
+
+.newspaper-title:hover {
+  background-position: 0 -38px;
+}
+
+.newspaper-title-date {
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  text-align: center;
+  text-shadow: 1px 1px 0 #761f0b;
+  width: 66px;
+  height: 35px;
+  font-size: 14px;
+  font-family: 'yanone_kaffeesatzregular';
+  color: #ece8e1;
+}
+
+.newspaper-title-title {
+  position: absolute;
+  top: 2px;
+  left: 71px;
+  text-shadow: 1px 1px 0 #895e13;
+  width: 253px;
+  height: 35px;
+  font-size: 17px;
+  font-family: 'yanone_kaffeesatzregular';
+  color: #ece8e1;
+}
