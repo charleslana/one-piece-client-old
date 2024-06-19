@@ -3,15 +3,11 @@ import HeaderComponent from '@/components/HeaderComponent.vue';
 import NavBarComponent from '@/components/NavBarComponent.vue';
 import MenuComponent from '@/components/MenuComponent.vue';
 import ContextComponent from '@/components/ContextComponent.vue';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import type { Newspaper } from '@/interfaces/newspaper';
 import { formatDateToNewspaper, getCharacterBattle, getCharacterMini } from '@/utils/utils';
 import HeaderTitleComponent from '@/components/HeaderTitleComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
-
-onMounted(() => {
-  window.scrollTo(0, 0);
-});
 
 const newspapers = ref<Newspaper[]>([
   {

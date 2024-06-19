@@ -68,7 +68,6 @@ const user = ref<User>({
 });
 
 onMounted(() => {
-  window.scrollTo(0, 0);
   randomCharacter.value = getRandomCharacter();
   getCharacters();
 });

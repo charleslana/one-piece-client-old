@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue';
 import NewspaperAllView from '@/views/NewspaperAllView.vue';
 import NewspaperDetailsView from '@/views/NewspaperDetailsView.vue';
 import NewspaperView from '@/views/NewspaperView.vue';
+import NicknamesView from '@/views/NicknamesView.vue';
 import RegisterView from '@/views/RegisterView.vue';
 import SelectCharacterView from '@/views/SelectCharacterView.vue';
 import VipBenefitsView from '@/views/VipBenefitsView.vue';
@@ -60,12 +61,25 @@ const router = createRouter({
       meta: { title: getTitle('Vantagens VIP') }
     },
     {
+      path: '/nicknames',
+      name: 'nicknames',
+      component: NicknamesView,
+      meta: { title: getTitle('Alcunhas') }
+    },
+    {
       path: '/:catchAll(.*)',
       name: 'not-found',
       component: () => import('../views/NotFoundView.vue'),
       meta: { title: getTitle('Nada por aqui') }
     }
-  ]
+  ],
+  scrollBehavior(_to, _from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0 };
+    }
+  }
 });
 
 export default router;

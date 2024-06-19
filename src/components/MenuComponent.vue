@@ -82,7 +82,7 @@ function searchPlayer(): void {
     </div>
     <div class="side-bar-title">Personagem</div>
     <div class="side-bar-menu-bg">
-      <RouterLink to="/newspaper"
+      <RouterLink to="/nicknames"
         >Alcunhas <img src="../assets/images/icons/new.gif" alt="New icon"
       /></RouterLink>
       <RouterLink to="/newspaper">Akuma no Mi</RouterLink>

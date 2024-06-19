@@ -7,6 +7,7 @@ import './assets/main.css';
 import 'bulma/css/bulma.css';
 import 'animate.css';
 import 'floating-vue/dist/style.css';
+import 'vue-search-select/dist/VueSearchSelect.css';
 
 const app = createApp(App);
 
