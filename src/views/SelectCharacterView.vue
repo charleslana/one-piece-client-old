@@ -328,8 +328,8 @@ function getCharacterButton(faction: OrganizationType): string {
                         <option value="human">Humano</option>
                         <option value="dwarf">Anão</option>
                         <option value="giant">Gigante</option>
-                        <option value="merman">Tritão</option>
-                        <option value="cyborg">Ciborgue</option>
+                        <option value="merman">Tritão (VIP)</option>
+                        <option value="cyborg">Ciborgue (VIP)</option>
                       </select>
                     </div>
                   </div>

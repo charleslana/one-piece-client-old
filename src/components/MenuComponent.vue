@@ -77,7 +77,7 @@ function searchPlayer(): void {
       <RouterLink to="/newspaper">Comprar Créditos</RouterLink>
       <RouterLink to="/newspaper">Shopping</RouterLink>
       <RouterLink to="/select-character">Trocar de personagem</RouterLink>
-      <RouterLink to="/select-character">Vantagens VIP</RouterLink>
+      <RouterLink to="/vip-benefits">Vantagens VIP</RouterLink>
       <a @click="logout">Desconectar</a>
     </div>
     <div class="side-bar-title">Personagem</div>

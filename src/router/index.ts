@@ -5,6 +5,7 @@ import NewspaperDetailsView from '@/views/NewspaperDetailsView.vue';
 import NewspaperView from '@/views/NewspaperView.vue';
 import RegisterView from '@/views/RegisterView.vue';
 import SelectCharacterView from '@/views/SelectCharacterView.vue';
+import VipBenefitsView from '@/views/VipBenefitsView.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -51,6 +52,12 @@ const router = createRouter({
       name: 'avatar',
       component: AvatarView,
       meta: { title: getTitle('Avatares') }
+    },
+    {
+      path: '/vip-benefits',
+      name: 'vip-benefits',
+      component: VipBenefitsView,
+      meta: { title: getTitle('Vantagens VIP') }
     },
     {
       path: '/:catchAll(.*)',
