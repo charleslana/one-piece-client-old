@@ -1,3 +1,4 @@
+import AvatarView from '@/views/AvatarView.vue';
 import HomeView from '@/views/HomeView.vue';
 import NewspaperAllView from '@/views/NewspaperAllView.vue';
 import NewspaperDetailsView from '@/views/NewspaperDetailsView.vue';
@@ -44,6 +45,12 @@ const router = createRouter({
       name: 'newspaper-details',
       component: NewspaperDetailsView,
       meta: { title: getTitle('Detalhes do jornal') }
+    },
+    {
+      path: '/avatar',
+      name: 'avatar',
+      component: AvatarView,
+      meta: { title: getTitle('Avatares') }
     },
     {
       path: '/:catchAll(.*)',

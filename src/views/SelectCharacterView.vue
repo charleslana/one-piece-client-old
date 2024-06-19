@@ -233,7 +233,11 @@ function getCharacterButton(faction: OrganizationType): string {
                 </div>
                 <div class="column is-4" v-for="index in totalAvailable" :key="index">
                   <div class="create-box is-flex is-justify-content-center is-align-items-center">
-                    <div class="create-button" @click="step = 2"></div>
+                    <div
+                      class="create-button"
+                      :class="{ 'create-vip-button': user.userCharacters.length + index > 9 }"
+                      @click="step = 2"
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -395,6 +399,13 @@ function getCharacterButton(faction: OrganizationType): string {
 
 .create-button {
   background: url(../assets/images/manage-account/create-button.png) no-repeat;
+  width: 113px;
+  height: 114px;
+  cursor: pointer;
+}
+
+.create-vip-button {
+  background: url(../assets/images/manage-account/character-vip.png) no-repeat;
   width: 113px;
   height: 114px;
   cursor: pointer;
