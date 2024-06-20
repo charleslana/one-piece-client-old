@@ -29,6 +29,7 @@ const selectedBreed = ref<BreedType>('human');
 const selectedClass = ref<ClassType>('swordsman');
 const isLoading = ref(false);
 const errorMessage = ref('');
+const successMessage = ref('');
 let notificationTimeout: ReturnType<typeof setTimeout> | undefined = undefined;
 const user = ref<User>({
   id: 1,
@@ -119,6 +120,13 @@ function showError(message: string): void {
   }, 4000);
 }
 
+function showSuccess(message: string): void {
+  successMessage.value = message;
+  notificationTimeout = setTimeout(() => {
+    successMessage.value = '';
+  }, 4000);
+}
+
 async function getCharacters(): Promise<void> {
   totalAvailable.value = 12 - user.value.userCharacters.length;
 }
@@ -147,8 +155,14 @@ function confirmDeleteCharacter(id: number): void {
 }
 
 function deleteCharacter(): void {
-  alert(characterId.value);
-  cancelDelete();
+  successMessage.value = '';
+  isLoading.value = true;
+  clearTimeout(notificationTimeout);
+  setTimeout(() => {
+    isLoading.value = false;
+    cancelDelete();
+    showSuccess(`Seu personagem foi deletado com sucesso ${characterId.value}`);
+  }, 2000);
 }
 
 function cancelDelete(): void {
@@ -210,6 +224,11 @@ function getCharacterButton(faction: OrganizationType): string {
             class="column is-flex is-justify-content-center animate__animated animate__slideInDown"
             v-if="step === 1"
           >
+            <div class="is-relative">
+              <div class="notification is-success is-light" v-if="successMessage !== ''">
+                {{ successMessage }}
+              </div>
+            </div>
             <div class="character-box p-4 pb-5" v-if="!isLoading">
               <div class="columns is-multiline is-mobile is-pulled-left">
                 <div
@@ -374,7 +393,7 @@ function getCharacterButton(faction: OrganizationType): string {
             </div>
           </div>
           <div class="column is-flex is-justify-content-center" v-if="step === 0">
-            <div class="character-box p-4 pb-5">
+            <div class="character-box p-4 pb-5" v-if="!isLoading">
               <h1 class="faction-title">Confirme a sua senha</h1>
               <h2 class="character-alert">
                 Lembre-se de que este processo é irreversível. Para confirmar a exclusão de seu
@@ -394,9 +413,14 @@ function getCharacterButton(faction: OrganizationType): string {
                 </div>
                 <div class="is-flex is-justify-content-space-evenly pt-5 mt-5">
                   <div class="red-button" @click="cancelDelete">Cancelar</div>
-                  <button class="red-button green-button" :disabled="false">Deletar</button>
+                  <button class="red-button green-button" :disabled="password === ''">
+                    Deletar
+                  </button>
                 </div>
               </form>
+            </div>
+            <div class="home-box is-flex is-justify-content-center" v-else>
+              <img src="../assets/images/home/loading.gif" alt="Loading image" />
             </div>
           </div>
         </div>
