@@ -66,6 +66,8 @@ const user = ref<User>({
     }
   ]
 });
+const isDeleted = ref(0);
+const password = ref('');
 
 onMounted(() => {
   randomCharacter.value = getRandomCharacter();
@@ -134,13 +136,24 @@ function loginCharacter(id: number): void {
   }, 1000);
 }
 
-function deleteCharacter(id: number): void {
+function confirmDeleteCharacter(id: number): void {
   const isConfirmed = confirm(
     'Você tem certeza de que deseja deletar este personagem?\nO processo é irreversível!'
   );
   if (isConfirmed) {
-    alert(id);
+    isDeleted.value = id;
+    step.value = 0;
   }
+}
+
+function deleteCharacter(): void {
+  alert(isDeleted.value);
+  cancelDelete();
+}
+
+function cancelDelete(): void {
+  password.value = '';
+  step.value = 1;
 }
 
 function getCharacterNameFaction(faction: OrganizationType): string {
@@ -224,7 +237,10 @@ function getCharacterButton(faction: OrganizationType): string {
                       <div :class="getCharacterLevelFaction(userCharacter.faction)">
                         Nível {{ userCharacter.level }}
                       </div>
-                      <button class="delete-button" @click.stop="deleteCharacter(userCharacter.id)">
+                      <button
+                        class="delete-button"
+                        @click.stop="confirmDeleteCharacter(userCharacter.id)"
+                      >
                         deletar
                       </button>
                     </div>
@@ -355,6 +371,32 @@ function getCharacterButton(faction: OrganizationType): string {
             </div>
             <div class="home-box is-flex is-justify-content-center" v-else>
               <img src="../assets/images/home/loading.gif" alt="Loading image" />
+            </div>
+          </div>
+          <div class="column is-flex is-justify-content-center" v-if="step === 0">
+            <div class="character-box p-4 pb-5">
+              <h1 class="faction-title">Confirme a sua senha</h1>
+              <h2 class="character-alert">
+                Lembre-se de que este processo é irreversível. Para confirmar a exclusão de seu
+                personagem, confirme sua senha.
+              </h2>
+              <form @submit.prevent="deleteCharacter">
+                <div class="field">
+                  <label class="label character-password">Senha</label>
+                  <div class="control">
+                    <input
+                      class="input is-borderless"
+                      type="password"
+                      placeholder="senha"
+                      v-model.trim="password"
+                    />
+                  </div>
+                </div>
+                <div class="is-flex is-justify-content-space-evenly pt-5 mt-5">
+                  <div class="red-button" @click="cancelDelete">Cancelar</div>
+                  <button class="red-button green-button" :disabled="false">Deletar</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -645,5 +687,21 @@ function getCharacterButton(faction: OrganizationType): string {
   top: 0px;
   left: 13px;
   width: 264px;
+}
+
+.character-alert {
+  font-family: 'yanone_kaffeesatzregular';
+  font-size: 20px;
+  text-shadow: 0px 1px #572d2c;
+  color: #b94a48;
+  text-transform: uppercase;
+}
+
+.character-password {
+  font-family: yanone_kaffeesatzregular;
+  font-size: 32px;
+  color: #928470;
+  text-transform: uppercase;
+  text-shadow: 0px 2px #b3a898;
 }
 </style>
