@@ -66,7 +66,7 @@ const user = ref<User>({
     }
   ]
 });
-const isDeleted = ref(0);
+const characterId = ref(0);
 const password = ref('');
 
 onMounted(() => {
@@ -141,13 +141,13 @@ function confirmDeleteCharacter(id: number): void {
     'Você tem certeza de que deseja deletar este personagem?\nO processo é irreversível!'
   );
   if (isConfirmed) {
-    isDeleted.value = id;
+    characterId.value = id;
     step.value = 0;
   }
 }
 
 function deleteCharacter(): void {
-  alert(isDeleted.value);
+  alert(characterId.value);
   cancelDelete();
 }
 
